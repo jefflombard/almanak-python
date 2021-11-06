@@ -1,8 +1,8 @@
 # Almanak.ai Python Tools
 
-## 1. Data Grabber
+## 1. Data Grabber SDK
 
-A tool to get LTS data from https://cds.climate.copernicus.eu/
+A simple wrapper for to get LTS data from https://cds.climate.copernicus.eu/
 
 ### Local setup
 
@@ -14,4 +14,4 @@ url: https://cds.climate.copernicus.eu/api/v2
 key: <insert your api key here>
 ```
 
-
+### Usage

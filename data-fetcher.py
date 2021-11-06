@@ -2,25 +2,14 @@ import cdsapi
 
 c = cdsapi.Client()
 
-c.retrieve(
+def lds_level_1_request(year, month, days, area, filename):
+    return c.retrieve(
     'reanalysis-era5-land',
     {
         'variable': 'soil_temperature_level_1',
-        'year': '2021',
-        'month': '07',
-        'day': [
-            '01', '02', '03',
-            '04', '05', '06',
-            '07', '08', '09',
-            '10', '11', '12',
-            '13', '14', '15',
-            '16', '17', '18',
-            '19', '20', '21',
-            '22', '23', '24',
-            '25', '26', '27',
-            '28', '29', '30',
-            '31',
-        ],
+        'year': year,
+        'month': month,
+        'day': days,
         'time': [
             '00:00', '01:00', '02:00',
             '03:00', '04:00', '05:00',
@@ -31,10 +20,13 @@ c.retrieve(
             '18:00', '19:00', '20:00',
             '21:00', '22:00', '23:00',
         ],
-        'area': [
-            64.07, -20.65, 64.06,
-            -20.64,
-        ],
+        'area': area,
         'format': 'grib',
     },
-    'download.grib')
+    filename
+    )
+
+def get_solheimar( year, month, days ):
+  area = [ 64.07, -20.65, 64.06, -20.64 ]
+  filename = f'{year}-{month}.grib'
+  return lds_level_1_request(year, month, days, area, filename)
