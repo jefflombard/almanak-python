@@ -26,6 +26,7 @@ def lds_level_1_request(year, month, days, area, filename):
     filename
     )
 
+# Solheimar specific function
 def get_solheimar( year, month, days ):
   area = [ 64.07, -20.65, 64.06, -20.64 ]
   filename = f'{year}-{month}.grib'
