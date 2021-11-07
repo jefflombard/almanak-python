@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 cdsapi="0.5.1"
+pygrib = "*"
+eccodes = "*"
+cfgrib = "*"
 
 [dev-packages]
 
